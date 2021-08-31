@@ -12,6 +12,43 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#login").click(function () {
+
+                email = $("#email").val();
+                password = $("#password").val();
+
+                $.ajax({
+                    type: "POST",
+                    url: "pcheck.php",
+                    data: "email=" + email + "&password=" + password,
+                    success: function (html) {
+                        if (html == 'true') {
+
+                            $("#add_err2").html('<div class="alert alert-success"> <strong>Authenticated</strong></div>');
+
+                            window.location.href = "userdashboard.php";
+
+                        } else if (html == 'false') {
+                            $("#add_err2").html('<div class="alert alert-danger"><strong>Authentication</strong> failed </div>');                    
+
+                        } else {
+                            $("#add_err2").html('<div class="alert alert-danger"> <strong>Error</strong> processing request. Please try again. </div>');
+                        }
+                    },
+                    beforeSend: function () {
+                        $("#add_err2").html("loading...");
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+
+
 </head>
 <body>
     <!--Navbar-->
@@ -29,7 +66,7 @@
             <a class="nav-link" href="index.php">User Login</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="registration.php">User Registration</a>
+            <a class="nav-link" href="register.php">User Registration</a>
             </li>
             <li class="nav-item active">
             <a class="nav-link" href="adminlogin.php">Admin Login</a>
@@ -44,7 +81,9 @@
                 <p>Library Infor</p>
             </div>
             <div class="col-lg-6"  style="align-items: center;">
+                <hr>
                 <h1 style="text-align:center">Admin Login Form</h1>
+                <hr>
                 <form action="">
                     <div class="form-group">
                         <label for="email"></label>Email Address
