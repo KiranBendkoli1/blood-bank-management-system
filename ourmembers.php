@@ -1,3 +1,18 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$db = "bloodbank";
+
+$mysqli = new mysqli($servername,$username,$password,$db);
+
+if($mysqli->connect_error){
+    die("Connection Failed ". $mysqli->connect_error);
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,13 +41,13 @@
     </ul>
         <form class="form-inline my-2 my-lg-0"><ul class="navbar-nav mr-auto"  >
         <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link" href="#">Home</a>
             </li>
             <li class="nav-item">
             <a class="nav-link" href="#">About us</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="ourmembers.php">Our Members</a>
+            <a class="nav-link active" href="ourmembers.php">Our Members</a>
             </li>
             <li class="nav-item">
             <a class="nav-link" href="joinus.php">Join Us</a>
@@ -41,5 +56,44 @@
         </form>
     </div>
     </nav>
+
+
+    <div class="container">
+    <?php
+
+        $query = "SELECT * FROM donors";
+        $result = $mysqli->query($query);
+        echo "<table border='1'>
+            <tr>
+            <th>Donor's Name</th>
+            <th>Mobile Number</th>
+            <th>Blood Group</th>
+            <th>Donor's Age</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>City</th>
+            </tr>";
+        if($result->num_rows > 0){
+            while($row = mysqli_fetch_array($result))
+            {
+                echo "<tr>";
+                echo "<td>" . $row['donor_name'] . "</td>";
+                echo "<td>" . $row['mobile_no'] . "</td>";
+                echo "<td>" . $row['bloodgroup'] . "</td>";
+                echo "<td>" . $row['age'] . "</td>";
+                echo "<td>" . $row['gender'] . "</td>";
+                echo "<td>" . $row['address'] . "</td>";
+                echo "<td>" . $row['city'] . "</td> ";
+                echo "</tr>";
+            }
+            echo "</table>";
+
+        }
+
+    ?>
+    </div>
+
+    
+
 </body>
 </html>
