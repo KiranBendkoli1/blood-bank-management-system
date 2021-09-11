@@ -8,11 +8,11 @@
         <ul class="navbar-nav mr-auto"  >
     </ul>
         <form class="form-inline my-2 my-lg-0"><ul class="navbar-nav mr-auto"  >
-        <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <li class="nav-item ">
+            <a class="nav-link" href="userdashboard.php">Home</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#">About us</a>
+            <a class="nav-link" href="aboutus.php">About us</a>
             </li>
             <li class="nav-item">
             <a class="nav-link" href="ourmembers.php">Our Members</a>

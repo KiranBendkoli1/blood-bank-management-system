@@ -15,7 +15,7 @@ if(isset($_SESSION['login'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BloodBank - User Dashboard</title>
+    <title>BloodBank - Join Us</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -78,11 +78,10 @@ if(isset($_SESSION['login'])){
 
     <?php require_once 'usernav.php' ;?>
 
-    <div class="container-fluid" style="padding: 80px; background-color: #e3f2fd;height: 100vh;">
-        <div class="row">
+    <div class="container-fluid" style="padding: 80px; background-color: #e3f2fd;height: 150vh;">
+        <div class="row justify-content-center">
            
-            <div class="col-lg-3"></div>
-            <div class="col-lg-6" style="align-items: center;">
+            <div class="col-sm-6" style="align-items: center;">
                     <hr>
                     <h1 class="intro-text text-center">Donor's Registration form
                     </h1>
@@ -112,14 +111,14 @@ if(isset($_SESSION['login'])){
                             <div class="form-group col-md-6">
                             <select id="bloodgroup" name="bloodgroup"  class="form-control">
                                 <option selected>Choose...</option>
-                                <option value="A+">A+</option>
-                                <option value="A-">A-</option>
-                                <option value="B+">B+</option>
-                                <option value="B-">B-</option>
-                                <option value="O+">O+</option>
-                                <option value="O-">O-</option>
-                                <option value="AB+">AB+</option>
-                                <option value="AB-">AB-</option>
+                                <option value="A +ve">A+</option>
+                                <option value="A -ve">A-</option>
+                                <option value="B +ve">B+</option>
+                                <option value="B -ve">B-</option>
+                                <option value="O +ve">O+</option>
+                                <option value="O -ve">O-</option>
+                                <option value="AB +ve">AB+</option>
+                                <option value="AB -ve">AB-</option>
                             </select>
                             </div>
                             
@@ -160,7 +159,6 @@ if(isset($_SESSION['login'])){
                     </form>
             </div>
 
-            <div class="col-lg-3"></div>
             
         </div>
     </div> 

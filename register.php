@@ -72,35 +72,35 @@
 <body>
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">BloodBank Management System</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+        <a class="navbar-brand" href="#">BloodBank Management System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="mynavbar">
-        <ul class="navbar-nav mr-auto"  >
-    </ul>
-        <form class="form-inline my-2 my-lg-0"><ul class="navbar-nav mr-auto"  >
-        <li class="nav-item">
-            <a class="nav-link" href="index.php">User Login</a>
-            </li>
-            <li class="nav-item active">
-            <a class="nav-link" href="register.php">User Registration</a>
-            </li>
-            <li class="nav-item ">
-            <a class="nav-link" href="adminlogin.php">Admin Login</a>
-            </li>
+        <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav mr-auto"  >
         </ul>
-        </form>
-    </div>
+            <form class="form-inline my-2 my-lg-0"><ul class="navbar-nav mr-auto"  >
+            <li class="nav-item">
+                <a class="nav-link" href="index.php">User Login</a>
+                </li>
+                <li class="nav-item active">
+                <a class="nav-link" href="register.php">User Registration</a>
+                </li>
+                <li class="nav-item ">
+                <a class="nav-link" href="adminlogin.php">Admin Login</a>
+                </li>
+            </ul>
+            </form>
+        </div>
     </nav>
 
     <div class="container-fluid" style="padding: 80px; background-color: #e3f2fd;height: 100vh;">
         <div class="row">
-            <div class="col-lg-6" >
+            <div class="col-md-6" >
                 <p>Library Infor</p>
             </div>
-            <div class="col-lg-6"  style="align-items: center;">
+            <div class="col-md-6"  style="align-items: center;">
             <div class="col-lg-12">
                     <hr>
                     <h1 class="intro-text text-center">Registration form
