@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LMS - Admin Login</title>
+    <title>Bloodbank - Admin Login</title>
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -31,7 +31,7 @@
 
                             $("#add_err2").html('<div class="alert alert-success"> <strong>Authenticated</strong></div>');
 
-                            window.location.href = "userdashboard.php";
+                            window.location.href = "adminhome.php";
 
                         } else if (html == 'false') {
                             $("#add_err2").html('<div class="alert alert-danger"><strong>Authentication</strong> failed </div>');                    
@@ -54,7 +54,7 @@
 <body>
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">Library Management System</a>
+    <a class="navbar-brand" href="#">BloodBank Management System</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -79,7 +79,7 @@
     <div class="container-fluid" style="padding: 80px; background-color: #e3f2fd;height: 100vh;">
         <div class="row">
             <div class="col-lg-6" >
-                <p>Library Infor</p>
+                <p>blooodbank Infor</p>
             </div>
             <div class="col-lg-6"  style="align-items: center;">
                 <hr>
