@@ -37,40 +37,78 @@ $result = $mysqli->query($sql);
 </head>
 
 <body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">BloodBank Management System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav mr-auto"  >
+    </ul>
+        <form class="form-inline my-2 my-lg-0"><ul class="navbar-nav mr-auto"  >
+        <li class="nav-item">
+            <a class="nav-link" href="adminhome.php">Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="deletea.php">Delete Donor's Records</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="updatea.php">Update Donor's Information</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="adminlogout.php">Logout</a>
+            </li>
+        </ul>
+        </form>
+    </div>
+</nav>
+
+
+
+
+
+
     <div class="container">
-        <table  border='1'  cellspacing="2" cellpadding="2" >
-            <?php
-                if($result->num_rows>0){
+        <div class="table-responsive">
+            <table  border='1' class="table table-hover"  cellspacing="2" cellpadding="2" >
+                <?php
+                    if($result->num_rows>0){
 
-                    echo " <tr>
-                    <th>Donor's ID</th>
-                    <th>Donor's Name</th>
-                    <th>Mobile Number</th>
-                    <th>Blood Group </th>
-                    <th>Donor's Age</th>
-                    <th>Gender</th>
-                    <th>Address</th>
-                    <th>City</th>
-                </tr>";
-                    while($row = $result->fetch_assoc()){
-            ?>  
-            <tr>
-                <td><?php echo $row["donor_id"]; ?></td>
-                <td><?php echo $row["donor_name"]; ?></td>
-                <td><?php echo $row["mobile_no"]; ?></td>
-                <td><?php echo $row["bloodgroup"]; ?></td>
-                <td><?php echo $row["age"]; ?></td>
-                <td><?php echo $row["gender"]; ?></td>
-                <td><?php echo $row["address"]; ?></td>
-                <td><?php echo $row["city"]; ?></td>
-                <td><a href="updateuser.php?donor_id=<?php echo $row["donor_id"] ?>">Update</a></td>
-            </tr>
+                        echo " <thead>
+                        <tr>
+                        <th>Donor's ID</th>
+                        <th>Donor's Name</th>
+                        <th>Mobile Number</th>
+                        <th>Blood Group </th>
+                        <th>Donor's Age</th>
+                        <th>Gender</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        </tr>
+                        </thead>";
+                        while($row = $result->fetch_assoc()){
+                ?>  
+                <tr>
+                    <td><?php echo $row["donor_id"]; ?></td>
+                    <td><?php echo $row["donor_name"]; ?></td>
+                    <td><?php echo $row["mobile_no"]; ?></td>
+                    <td><?php echo $row["bloodgroup"]; ?></td>
+                    <td><?php echo $row["age"]; ?></td>
+                    <td><?php echo $row["gender"]; ?></td>
+                    <td><?php echo $row["address"]; ?></td>
+                    <td><?php echo $row["city"]; ?></td>
+                    <td><a class="btn btn-primary" href="updateuser.php?donor_id=<?php echo $row["donor_id"] ?>">Update</a></td>
+                </tr>
 
-            <?php	
-            } 
-            ?>
-        </table>
+                <?php	
+                } 
+                ?>
+            </table>
 
+        </div>
 
     </div>
 </body>
