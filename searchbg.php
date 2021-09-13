@@ -37,7 +37,35 @@ if($mysqli->connect_error){
 
 </head>
 <body>
-<?php require_once 'usernav.php' ;?>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">BloodBank Management System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav mr-auto"  >
+    </ul>
+        <form class="form-inline my-2 my-lg-0"><ul class="navbar-nav mr-auto"  >
+            <li class="nav-item ">
+            <a class="nav-link" href="userdashboard.php">Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="aboutus.php">About us</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="ourmembers.php">Our Members</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="joinus.php">Join Us</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="logout.php">Logout</a>
+            </li>
+        </ul>
+        </form>
+    </div>
+</nav>
 
 
     <div class="container">
@@ -70,21 +98,22 @@ if($mysqli->connect_error){
             $query = "SELECT * FROM donors WHERE bloodgroup='$bloodgroup'";
             $result = $mysqli->query($query);
              
-            
+            echo "<div class='table-responsive'>";
+                echo "<table class='table table-hover' border='1'>
+                    <thead>
+                        <tr>
+                        <th scope='col'>Donor's Name</th>
+                        <th scope='col'>Mobile Number</th>
+                        <th scope='col'>Blood Group</th>
+                        <th scope='col'>Donor's Age</th>
+                        <th scope='col'>Gender</th>
+                        <th scope='col'>Address</th>
+                        <th scope='col'>City</th>
+                    </thead>
+                    </tr>";
             
             if($result->num_rows > 0){
-                
-                echo "<table border='1'>
-                <tr>
-                <th>Donor's Name</th>
-                <th>Mobile Number</th>
-                <th>Blood Group</th>
-                <th>Donor's Age</th>
-                <th>Gender</th>
-                <th>Address</th>
-                <th>City</th>
-                </tr>";
-
+                echo "<tbody>";
                 while($row = mysqli_fetch_array($result))
                 {
                     echo "<tr>";
@@ -97,11 +126,12 @@ if($mysqli->connect_error){
                     echo "<td>" . $row['city'] . "</td> ";
                     echo "</tr>";
                 }
+                echo "</tbody>";
                 echo "</table>";
             }else{
                 echo "0 Results";
             }
-
+            echo "</div>";
         }
     ?>
 

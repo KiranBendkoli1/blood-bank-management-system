@@ -47,12 +47,19 @@
             });
         });
     </script>
+    <style>
+        .back-image{
+            background-image: url('img/background1.jpeg');
+            background-size: cover;
+        }
+
+    </style>
 
 </head>
 <body>
     <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">BloodBank Management System</a>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top p-md-3">
+    <a class="navbar-brand myhead" href="index.php">BloodBank Management System</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -62,13 +69,13 @@
     </ul>
         <form class="form-inline my-2 my-lg-0"><ul class="navbar-nav mr-auto"  >
         <li class="nav-item">
-            <a class="nav-link active" href="index.php">User Login</a>
+            <a class="nav-link mnav active" href="index.php">User Login</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="register.php">User Registration</a>
+            <a class="nav-link mnav" href="register.php">User Registration</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="adminlogin.php">Admin Login</a>
+            <a class="nav-link mnav" href="adminlogin.php">Admin Login</a>
             </li>
         </ul>
         </form>
@@ -76,46 +83,40 @@
     </nav>
 
 
-    <!--Main Body -->
-    <div class="container-fluid" style="padding: 80px; background-color: #e3f2fd;height: 100vh;">
-        <div class="row">
-            <div class="col-lg-6 order-sm-12" >
-                <hr>
-                <h1 style="text-align:center">User Login Form</h1>
-                <hr>
-                <div id="add_err2"></div>
-                <form role="form" method="POST">
-                    <div class="form-group">
-                        <label for="email"></label>Email Address
-                        <input type="email" class="form-control" id="email"> 
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password"> 
-                    </div>
-                    <button type="submit" class="btn btn-primary" id="login">login</button>
-                </form>
-                <div class="form-group col-lg-12">
-                    <a href="register.php"><button type="submit" class="btn btn-default">Not a Member? Register here</button></a>
-                </div>
-            </div>
-            <div class="col-lg-6"  style="align-items: center;">
-                <div id="carousel" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                        <img class="d-block w-100" src="img/bbimg1.jpg" width="800px" height="500px" alt="First slide">
+    <div class="back-image w-100 vh-100 d-flex justify-content-center">
+
+            <!--Main Body -->
+        <div class="container-fluid" style="padding-top: 80px; height: 100vh;">
+            <div class="row">
+                <div class="col-lg-6 order-sm-12" >
+                    <hr>
+                    <h1 class="titles" style="text-align:center;">User Login Form</h1>
+                    <hr>
+                    <div id="add_err2"></div>
+                    <form role="form" method="POST">
+                        <div class="form-group">
+                            <label for="email" class="lb">Email Address</label>
+                            <input type="email" class="form-control" id="email"> 
                         </div>
-                        <div class="carousel-item">
-                        <img class="d-block w-100" src="img/bbimg2.jpg" width="800px" height="500px" alt="Second slide">
+                        <div class="form-group">
+                            <label for="password" class="lb">Password</label>
+                            <input type="password" class="form-control" id="password"> 
                         </div>
-                        <div class="carousel-item">
-                        <img class="d-block w-100" src="img/bbimg3.jpg" width="800px" height="500px" alt="Third slide">
-                        </div>
+                        <button type="submit" class="btn btn-primary" id="login">login</button>
+                    </form>
+                    <div class="form-group col-lg-12">
+                        <a href="register.php"><button type="submit" class="btn btn-default">Not a Member? Register here</button></a>
                     </div>
                 </div>
+                <div class="col-lg-6"  style="align-items: center;">
+                    
+                </div>
             </div>
-        </div>
-    </div>    
+        </div>    
+
+
+    </div>
+
 
 
 </body>
