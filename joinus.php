@@ -16,7 +16,9 @@ if(isset($_SESSION['login'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BloodBank - Join Us</title>
-
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -45,7 +47,7 @@ if(isset($_SESSION['login'])){
 
                             window.location.href = "userdashboard.php";
                         } else if (html == 'false') {
-                            $("#add_err2").html('<div class="alert alert-danger"><strong>Email Address</strong> already in system. </div>');
+                            $("#add_err2").html('<div class="alert alert-danger"><strong>Donor</strong> already in system. </div>');
                         } else if (html == 'donor') {
                             $("#add_err2").html('<div class="alert alert-danger">  <strong>Donor\'s Name</strong> is required.  </div>');
                         } else if (html == "mob"){
@@ -76,7 +78,7 @@ if(isset($_SESSION['login'])){
 <body>
 
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar mynavbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="#">BloodBank Management System</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -99,6 +101,9 @@ if(isset($_SESSION['login'])){
                 <a class="nav-link" href="joinus.php">Join Us</a>
                 </li>
                 <li class="nav-item">
+                <a class="nav-link" href="userstock.php">Make Request</a>
+                </li>
+                <li class="nav-item">
                 <a class="nav-link" href="logout.php">Logout</a>
                 </li>
             </ul>
@@ -106,10 +111,10 @@ if(isset($_SESSION['login'])){
         </div>
     </nav>
 
-    <div class="container-fluid" style="padding: 80px; background-color: #e3f2fd;height: 150vh;">
+    <div class="container-fluid" style="padding-top: 80px;">
         <div class="row justify-content-center">
            
-            <div class="col-sm-6" style="align-items: center;">
+            <div class="col-lg-6" style="align-items: center;">
                     <hr>
                     <h1 class="intro-text text-center">Donor's Registration form
                     </h1>
@@ -139,18 +144,18 @@ if(isset($_SESSION['login'])){
                             <div class="form-group col-md-6">
                             <select id="bloodgroup" name="bloodgroup"  class="form-control">
                                 <option selected>Choose...</option>
-                                <option value="A +ve">A+</option>
-                                <option value="A -ve">A-</option>
-                                <option value="B +ve">B+</option>
-                                <option value="B -ve">B-</option>
-                                <option value="O +ve">O+</option>
-                                <option value="O -ve">O-</option>
-                                <option value="AB +ve">AB+</option>
-                                <option value="AB -ve">AB-</option>
+                                <option value="A positive">A+</option>
+                                <option value="A negative">A-</option>
+                                <option value="B positive">B+</option>
+                                <option value="B negative">B-</option>
+                                <option value="O positive">O+</option>
+                                <option value="O negative">O-</option>
+                                <option value="AB positive">AB+</option>
+                                <option value="AB negative">AB-</option>
                             </select>
                             </div>
                             
-                        </div>
+                        </div>  
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="age">Age</label>
@@ -192,6 +197,7 @@ if(isset($_SESSION['login'])){
     </div> 
 
 
+    <?php require_once "footer.php"?>
 </body>
 </html>
 

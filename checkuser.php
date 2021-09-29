@@ -24,7 +24,7 @@ $row = mysqli_fetch_array($result);
 if($num_row >= 1){
     if(password_verify($password, $row['password'])){
         $_SESSION['login'] = $row['id'];
-        $_SESSION['lname'] = $row['fname'];
+        $_SESSION['fname'] = $row['fname'];
         $_SESSION['lname'] = $row['lname'];
 
         echo 'true';

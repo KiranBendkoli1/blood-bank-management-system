@@ -59,7 +59,7 @@
 <body>
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top p-md-3">
-    <a class="navbar-brand mnav" href="#">BloodBank Management System</a>
+    <a class="navbar-brand" href="index.php">BloodBank Management System</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -84,7 +84,7 @@
 
 
     <div class="back-image w-100 vh-100 d-flex justify-content-center">
-        <div class="container-fluid" style="padding-top: 80px;height: 100vh;">
+        <div class="container-fluid mycontainer" style="padding-top: 80px;height: 100vh;">
             <div class="row">
                 <div class="col-lg-6 order-sm-12" >
                 <hr>
@@ -112,5 +112,16 @@
     </div> 
 
 
+<!-- Footer -->
+<footer class="page-footer fixed-bottom  font-small blue">
+
+<!-- Copyright -->
+<div class="footer-copyright text-center py-3">© 2021 Copyright:
+  <a href="#"> bloodbankmanagement.com</a>
+</div>
+<!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 </body>
 </html>

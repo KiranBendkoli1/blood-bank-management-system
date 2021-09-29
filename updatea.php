@@ -29,6 +29,8 @@ $result = $mysqli->query($sql);
 
 ?>
 <head>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -39,7 +41,7 @@ $result = $mysqli->query($sql);
 <body>
 
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar mynavbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="#">BloodBank Management System</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -53,10 +55,15 @@ $result = $mysqli->query($sql);
             <a class="nav-link" href="adminhome.php">Home</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="deletea.php">Delete Donor's Records</a>
+            <a class="nav-link" href="deletea.php">Delete Records</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="updatea.php">Update Donor's Information</a>
+            <a class="nav-link active" href="updatea.php">Update Information</a>
+            </li>
+            <a class="nav-link" href="adminstock.php">Review Stocks</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="requests.php">Requests</a>
             </li>
             <li class="nav-item">
             <a class="nav-link" href="adminlogout.php">Logout</a>
@@ -72,7 +79,11 @@ $result = $mysqli->query($sql);
 
 
     <div class="container">
-        <div class="table-responsive">
+
+        <div class="row justify-content-center">
+            <h1>Update Donor's Records</h1>
+        </div>
+        <div class="row table-responsive">
             <table  border='1' class="table table-hover"  cellspacing="2" cellpadding="2" >
                 <?php
                     if($result->num_rows>0){
@@ -100,7 +111,7 @@ $result = $mysqli->query($sql);
                     <td><?php echo $row["gender"]; ?></td>
                     <td><?php echo $row["address"]; ?></td>
                     <td><?php echo $row["city"]; ?></td>
-                    <td><a class="btn btn-primary" href="updateuser.php?donor_id=<?php echo $row["donor_id"] ?>">Update</a></td>
+                    <td><a class="btn btn-primary rounded-pill" href="updateuser.php?donor_id=<?php echo $row["donor_id"] ?>">Update</a></td>
                 </tr>
 
                 <?php	
@@ -111,6 +122,8 @@ $result = $mysqli->query($sql);
         </div>
 
     </div>
+
+    <?php require_once "footer.php"?>
 </body>
 <?php
     } else{

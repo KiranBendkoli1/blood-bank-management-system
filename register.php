@@ -14,7 +14,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!--Script-->
-    
     <script type="text/javascript">
         $(document).ready(function () {
 
@@ -32,7 +31,7 @@
                     success: function (html) {
                         if (html == 'true') {
 
-                            $("#add_err2").html('<div class="alert alert-success"> <strong>Account</strong> processed. </div>');
+                            $("#add_err2").html('<div class="alert alert-success"> <strong>Donors Registration Successful</strong> processed. </div>');
 
                             window.location.href = "userdashboard.php";
 
@@ -67,11 +66,17 @@
         });
     </script>
 
+    <style>
+        .back-image{
+            background-image: url('img/background1.jpeg');
+            background-size: cover;
+        }
+    </style>
 
 </head>
 <body>
     <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top p-md-3">
         <a class="navbar-brand" href="#">BloodBank Management System</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -82,72 +87,78 @@
         </ul>
             <form class="form-inline my-2 my-lg-0"><ul class="navbar-nav mr-auto"  >
             <li class="nav-item">
-                <a class="nav-link" href="index.php">User Login</a>
+                <a class="nav-link mnav" href="index.php">User Login</a>
                 </li>
                 <li class="nav-item active">
-                <a class="nav-link" href="register.php">User Registration</a>
+                <a class="nav-link mnav" href="register.php">User Registration</a>
                 </li>
                 <li class="nav-item ">
-                <a class="nav-link" href="adminlogin.php">Admin Login</a>
+                <a class="nav-link mnav" href="adminlogin.php">Admin Login</a>
                 </li>
             </ul>
             </form>
         </div>
     </nav>
 
-    <div class="container-fluid" style="padding: 80px; background-color: #e3f2fd;height: 100vh;">
-        <div class="row">
-            <div class="col-lg-6 order-sm-12" >
-            <div >
-                    <hr>
-                    <h1 class="intro-text text-center">Registration form
-                    </h1>
-                    <div id="add_err2"></div>
-                    <hr>
-                    <form role="form" method="post" >
-                        <div class="row">
-                            <div class="form-group col-lg-6">
-                                <label>First Name</label>
-                                <input type="text" id="fname" name="fname" maxlength="25" class="form-control" required>
+
+    <div class="container-fluid back-image w-100 vh-100 d-flex justify-content-center">
+
+        <div class="container-fluid" style="padding-top: 80px; height: 100vh;">
+            <div class="row">
+                <div class="col-lg-6 order-sm-12" >
+                <div>
+                        <hr>
+                        <h1 class="titles intro-text text-center">Registration form
+                        </h1>
+                        <div id="add_err2"></div>
+                        <hr>
+                        <form role="form" method="post" >
+                            <div class="row">
+                                <div class="form-group col-lg-6">
+                                    <label class="lb">First Name</label>
+                                    <input type="text" id="fname" name="fname" maxlength="25" class="form-control" required>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label class="lb">Last Name</label>
+                                    <input type="text" id="lname" name="lname" maxlength="25" class="form-control" required>
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <label class="lb">Email Address</label>
+                                    <input type="email" id="email" name="email" maxlength="25" class="form-control" required>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group col-lg-12">
+                                    <label class="lb">Password</label>
+                                    <input type="password" id="password" name="password" maxlength="25" class="form-control" required>
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <button type="submit" class="btn btn-primary" id="register">Submit</button>
+                                </div>
                             </div>
-                            <div class="form-group col-lg-6">
-                                <label>Last Name</label>
-                                <input type="text" id="lname" name="lname" maxlength="25" class="form-control" required>
-                            </div>
-                            <div class="form-group col-lg-12">
-                                <label>Email Address</label>
-                                <input type="email" id="email" name="email" maxlength="25" class="form-control" required>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="form-group col-lg-12">
-                                <label>Password</label>
-                                <input type="password" id="password" name="password" maxlength="25" class="form-control" required>
-                            </div>
-                            <div class="form-group col-lg-12">
-                                <button type="submit" class="btn btn-primary" id="register">Submit</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-lg-6 order-sm-2"  style="align-items: center;">
-            <div id="carousel" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                        <img class="d-block w-100" src="img/bbimg1.jpg" width="800px" height="500px" alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                        <img class="d-block w-100" src="img/bbimg2.jpg" width="800px" height="500px" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                        <img class="d-block w-100" src="img/bbimg3.jpg" width="800px" height="500px" alt="Third slide">
-                        </div>
+                        </form>
                     </div>
                 </div>
+                <div class="col-lg-6 order-sm-2"  style="align-items: center;">
+                </div>
             </div>
-        </div>
-    </div>    
+        </div>   
 
+    </div>
+
+ 
+
+
+<!-- Footer -->
+<footer class="page-footer fixed-bottom  font-small blue">
+
+<!-- Copyright -->
+<div class="footer-copyright text-center py-3">© 2021 Copyright:
+  <a href="#"> bloodbankmanagement.com</a>
+</div>
+<!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 
 </body>
 </html>

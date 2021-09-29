@@ -28,6 +28,8 @@ if($mysqli->connect_error){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BloodBank - search by bloodgroup</title>
 
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -35,9 +37,10 @@ if($mysqli->connect_error){
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
+
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar mynavbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="#">BloodBank Management System</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -60,6 +63,9 @@ if($mysqli->connect_error){
             <a class="nav-link" href="joinus.php">Join Us</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="userstock.php">Make Request</a>
+                </li>
+            <li class="nav-item">
             <a class="nav-link" href="logout.php">Logout</a>
             </li>
         </ul>
@@ -69,6 +75,10 @@ if($mysqli->connect_error){
 
 
     <div class="container">
+    
+    <div class="row justify-content-center">
+        <h1>Search By bloodgroup</h1>
+    </div>
 
     <form method="post" class="row g-3">
         <div class="col-auto">
@@ -77,14 +87,14 @@ if($mysqli->connect_error){
         <div class="col-auto">
             <select name="bloodgroup" id="bloodgroup">
                 <option selected>Choose...</option>
-                <option value="A +ve">A+</option>
-                <option value="A -ve">A-</option>
-                <option value="B +ve">B+</option>
-                <option value="B -ve">B-</option>
-                <option value="O +ve">O+</option>
-                <option value="O -ve">O-</option>
-                <option value="AB +ve">AB+</option>
-                <option value="AB -ve">AB-</option>
+                <option value="A positive">A+</option>
+                <option value="A negative">A-</option>
+                <option value="B positive">B+</option>
+                <option value="B negative">B-</option>
+                <option value="O positive">O+</option>
+                <option value="O negative">O-</option>
+                <option value="AB positive">AB+</option>
+                <option value="AB negative">AB-</option>
             </select>
         </div>
         <div class="col-auto">
@@ -137,6 +147,7 @@ if($mysqli->connect_error){
 
     </div>
 
+    <?php require_once "footer.php"?>
 </body>
 </html>
 

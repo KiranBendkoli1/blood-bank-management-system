@@ -23,7 +23,7 @@ $row = mysqli_fetch_array($result);
 
 if($num_row >= 1){
     $_SESSION['login'] = $row['admin_id'];
-    $_SESSION['lname'] = $row['fname'];
+    $_SESSION['fname'] = $row['fname'];
     $_SESSION['lname'] = $row['lname'];
 
     echo 'true';

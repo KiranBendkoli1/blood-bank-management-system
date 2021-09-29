@@ -45,7 +45,7 @@ if (strlen($fname) < 2) {
 		if ($num_row < 1) {
 
 			$insert_row = $mysqli->query("INSERT INTO members (fname, lname, email, password) VALUES ('$fname', '$lname', '$email', '$spassword')");
-
+	
 			if ($insert_row) {
 
 				$_SESSION['login'] = $mysqli->insert_id;

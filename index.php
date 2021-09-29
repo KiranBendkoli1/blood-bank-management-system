@@ -59,7 +59,7 @@
 <body>
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top p-md-3">
-    <a class="navbar-brand myhead" href="index.php">BloodBank Management System</a>
+    <a class="navbar-brand" href="index.php">BloodBank Management System</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -68,8 +68,8 @@
         <ul class="navbar-nav mr-auto"  >
     </ul>
         <form class="form-inline my-2 my-lg-0"><ul class="navbar-nav mr-auto"  >
-        <li class="nav-item">
-            <a class="nav-link mnav active" href="index.php">User Login</a>
+            <li class="nav-item active">
+            <a class="nav-link mnav" href="index.php">User Login</a>
             </li>
             <li class="nav-item">
             <a class="nav-link mnav" href="register.php">User Registration</a>
@@ -81,7 +81,6 @@
         </form>
     </div>
     </nav>
-
 
     <div class="back-image w-100 vh-100 d-flex justify-content-center">
 
@@ -109,13 +108,30 @@
                     </div>
                 </div>
                 <div class="col-lg-6"  style="align-items: center;">
-                    
+                        
                 </div>
             </div>
         </div>    
 
 
     </div>
+
+
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!-- Footer -->
+<footer class="page-footer fixed-bottom  font-small blue">
+
+<!-- Copyright -->
+<div class="footer-copyright text-center py-3">© 2021 Copyright:
+  <a href="#"> bloodbankmanagement.com</a>
+</div>
+<!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 
 
 
